@@ -37,7 +37,6 @@ jobs:
   
   deploydev: 
     name: deploy to dev
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     environment: 
       name: dev
@@ -48,7 +47,6 @@ jobs:
         
   deploypreprod: 
     name: deploy to preprod
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     environment: 
       name: prepod
@@ -59,7 +57,6 @@ jobs:
         
   deployprod: 
     name: deploy to prod
-    if: github.event.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: 
       name: prod
