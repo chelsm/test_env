@@ -41,6 +41,7 @@ jobs:
     environment: 
       name: dev
       url: 'http://dev.myapp.com'
+    needs: 'build'
     steps:
       - name: Deploy
         run: echo I am deploying to dev! 
@@ -51,6 +52,7 @@ jobs:
     environment: 
       name: prepod
       url: 'http://preprod.myapp.com'
+    needs: 'deploydev'
     steps:
       - name: Deploy
         run: echo I am deploying to preprod! 
@@ -61,6 +63,7 @@ jobs:
     environment: 
       name: prod
       url: 'http://prod.myapp.com'
+    needs: 'deploypreprod'
     steps:
       - name: Deploy
         run: echo I am deploying to prod! 
