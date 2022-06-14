@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: dev
-      url: 'http://dev-lospa.net/'
+      url: 'lospa.alwaysdata.net'
     needs: 'build'
     steps:
       - name: Deploy
