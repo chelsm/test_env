@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: dev
-      url: 'http://dev.myapp.com'
+      url: 'http://dev-lospa.net/'
     needs: 'build'
     steps:
       - name: Deploy
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: prepod
-      url: 'http://preprod.myapp.com'
+      url: 'http://preprod-lospa.net/'
     needs: 'deploydev'
     steps:
       - name: Deploy
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: prod
-      url: 'http://prod.myapp.com'
+      url: 'http://prod-lospa.net/'
     needs: 'deploypreprod'
     steps:
       - name: Deploy
